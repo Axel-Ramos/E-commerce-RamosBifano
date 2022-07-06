@@ -1,0 +1,26 @@
+header{
+    background-color: #282c34;
+    color: white;
+}
+header p{
+    font-size: 25px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+.navbar-media{
+    display: flex;
+    list-style-type: none;
+}
+.navbar-productos{
+    display: flex;
+    list-style-type: none;
+}
+.navbar-listap{
+    margin-right: 3cm;
+    border-top: white;
+    font-size: 20px;
+}
+  
+  
