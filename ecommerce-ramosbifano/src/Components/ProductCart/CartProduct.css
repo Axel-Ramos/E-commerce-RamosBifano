@@ -1,0 +1,17 @@
+.cart{
+    background-color: rgba(0, 0, 255, 0.53);
+    border-radius: 15px;
+}
+.cart--cantidad{
+    display: flex;
+}
+.boton-mas{
+    background-color: rgba(21, 222, 21, 0.841);
+    border-radius: 5px;
+    color: black;
+}
+.boton-menos{
+    background-color: rgba(223, 19, 19, 0.919);
+    border-radius: 5px;
+    color: black;
+}
