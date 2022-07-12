@@ -1,4 +1,5 @@
 import "./navbar.css";
+import CartShop from "../CartShop/CartShop";
 
 function Navbar(){
   return(
@@ -11,6 +12,7 @@ function Navbar(){
               <li>"Logo Instagram"</li>
               <li>"Logo Facebook"</li>
             </ul>
+            <CartShop/>
           </div>
       </nav>
       <nav>
