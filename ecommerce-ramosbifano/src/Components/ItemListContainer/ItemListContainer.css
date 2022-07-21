@@ -1,8 +1,24 @@
+/*Cart de los Productos*/
 .cart{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.products{
+    background-color: rgba(0, 0, 255, 0.359);
+    border-radius: 15px;
+}
+
+
+
+
+
+/*CSS Detalle del Producto*/
+.detalleProducto{
     background-color: rgba(0, 0, 255, 0.53);
     border-radius: 15px;
 }
-.cart--cantidad{
+.detalleProducto--cantidad{
     display: flex;
 }
 .boton-mas{

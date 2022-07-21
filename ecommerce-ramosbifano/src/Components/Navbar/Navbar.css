@@ -23,13 +23,6 @@ header p{
     font-size: 20px;
     list-style-type: none;
 }
-.carro{
-    background-color: rgba(128, 128, 128, 0.431);
-    border-radius: 30px;
-    width: 45px;
-    height: 35px;
-    justify-content: flex-end;
-}
 .logos{
     margin-left: 15px;
 
