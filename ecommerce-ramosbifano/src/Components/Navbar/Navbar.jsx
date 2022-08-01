@@ -1,14 +1,16 @@
-import CartWidget from "./CartWidget/CartWidget"
+import {Link} from "react-router-dom";
 import LogoFacebook from "./ComponentesLogos/LogoFacabook"
 import LogoInstagram from "./ComponentesLogos/LogoInstagram"
 import LogoWpp from "./ComponentesLogos/LogoWpp"
+import CartWidget from "./CartWidget/CartWidget"
 import "./Navbar.css"
 
 function Navbar(){
   return(
     <header className="App-header">
       <nav className="navbar">
-          <p>KARFAB</p>
+          <Link to="/">KARFAB</Link>
+          {/* <p>KARFAB</p> */}
           <div>
             <ul className="navbar-media">
               <li className="logos"><LogoFacebook/></li>
@@ -20,11 +22,11 @@ function Navbar(){
       <nav>
         <div>
           <ul className="navbar-productos">
-            <li className="navbar-listap"><a href="#" className="links"> Cucharas</a></li>
-            <li className="navbar-listap"><a href="#" className="links"> Máscara Facial</a></li>
-            <li className="navbar-listap"><a href="#" className="links"> Cortantes</a></li>
-            <li className="navbar-listap"><a href="#" className="links"> Set Geometría</a></li>
-            <li><CartWidget/></li>
+            <Link to="/categoria/cucharas"><li className="navbar-listap links">Cucharas</li></Link>
+            <Link to="/categoria/mascara-facial"><li className="navbar-listap links">Máscara Facial</li></Link>
+            <Link to="/categoria/cortantes"><li className="navbar-listap links">Cortantes</li></Link>
+            <Link to="/categoria/set-geometria"><li className="navbar-listap links">Set Geometría</li></Link>
+            <Link to="/cart"><CartWidget/></Link>
           </ul>
         </div>
       </nav>

@@ -1,4 +1,4 @@
-import Contador from "../ItemCount/ItemCount";
+import Contador from "../../ItemListContainer/ItemCount/ItemCount";
 
 function DetalleProducto(){
     return(
@@ -14,4 +14,5 @@ function DetalleProducto(){
         </div>
     )
 }
+
 export default DetalleProducto;
