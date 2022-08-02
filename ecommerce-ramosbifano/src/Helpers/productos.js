@@ -1,7 +1,7 @@
 let productos=[
     {
         "id":"1",
-        "categoria":"cuchara",
+        "categoria":"cucharas",
         "nombre":"Cuchara Helado",
         "imagen":"../imagenes/cuchara1.jpeg",
         "precio":"100",
@@ -9,7 +9,7 @@ let productos=[
     },
     {
         "id":"2",
-        "categoria":"máscara facial",
+        "categoria":"mascara-facial",
         "nombre":"Máscara Facial",
         "imagen": "../../Helpers/imagenes/mascara-facial1.jpeg",
         "precio":"300",
@@ -17,7 +17,7 @@ let productos=[
     },
     {
         "id":"3",
-        "categoria":"cortante",
+        "categoria":"cortantes",
         "nombre":"Cortante Forma",
         "imagen":"../../Helpers/imagenes/cortante-formas.jpeg",
         "precio":"300",
@@ -25,7 +25,7 @@ let productos=[
     },
     {
         "id":"4",
-        "categoria":"cortante",
+        "categoria":"cortantes",
         "nombre":"Cortante Letra",
         "imagen":"../../Helpers/imagenes/cortante-letra.jpeg",
         "precio":"230",
@@ -33,7 +33,7 @@ let productos=[
     },
     {
         "id":"5",
-        "categoria":"cortante",
+        "categoria":"cortantes",
         "nombre":"Cortante Número",
         "imagen":"../../Helpers/imagenes/cortante-numero.jpeg",
         "precio":"250",
@@ -41,7 +41,7 @@ let productos=[
     },
     {
         "id":"6",
-        "categoria":"set geometria",
+        "categoria":"set-geometria",
         "nombre":"Set Geometría",
         "imagen":"../../Helpers/imagenes/set-geometria1.jpeg",
         "precio":"320",
@@ -57,6 +57,6 @@ export const  getFetch=(id)=>{
                 }else{
                     resolve(productos)
                 }
-            },3000)
+            },1000)
         })
 }
