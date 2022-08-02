@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFetch } from "../../Helpers/productos";
 import ItemDetail from "./ItemDetail/ItemDetail"
 
 
 const ItemDetailContainer=()=>{
+    const [productos, setProductos]=useState([])
+    const [carga, setCarga]=useState(true)
     const detalleId=useParams();
     
     useEffect(()=>{
