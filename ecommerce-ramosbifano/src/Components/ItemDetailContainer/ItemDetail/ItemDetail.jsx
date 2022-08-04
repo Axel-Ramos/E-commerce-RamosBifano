@@ -1,18 +1,39 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import Contador from "../../ItemListContainer/ItemCount/ItemCount";
 
-function DetalleProducto(){
+const DetalleProducto=({producto})=>{
+    
+    const [isCount, setIsCount]=useState(true)
+
+    const onAdd=(cantidad)=>{
+        console.log("La cantidad es:"+cantidad)
+        setIsCount(false)
+    }
     return(
         <div className="detalleProducto">
-            <img src="#" alt="Imagen del Producto"/>
+            <img src={producto.imagen} alt="Imagen del Producto" className="imagenDetalle"/>
             <div>
-                <h3 className="textoProductos">Nombre del Producto</h3>
-                <p className="textoProductos">Caracteristicas del Producto</p>
-                <p className="textoProductos">Precio del Producto</p>
-                <Contador/>
-                <button>Agregar al Carrito</button>
+                <h1 className="tituloDetalle">{producto.nombre}</h1>
+                <p className="textoProductos">Descripcción: {producto.descripcion}</p>
+                <p className="textoProductos">Precio: ${producto.precio}</p>
+                <div>
+                { isCount  ?  
+                        <Contador initial={1} stock={8} onAdd={onAdd} /> 
+                    :
+                        <>
+                            <Link to={'/cart'}>
+                                <button className="botonCarrito" >Terminar Compra</button>
+                            </Link>
+                            <Link to={'/'}>
+                                <button className="botonCarrito" >Seguir Comprando</button>
+                            </Link>
+                        </>
+                }
+
+                </div>
             </div>
-        </div>
+    </div>
     )
 }
-
 export default DetalleProducto;

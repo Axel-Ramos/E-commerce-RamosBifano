@@ -1,17 +1,31 @@
-/*CSS Container*/
-.itemContainer{
-    background-color: rgba(58, 55, 55, 0.759);
-}
 /*Cart de los Productos*/
 .cart{
     display: flex;
     flex-wrap: wrap;
-    
+    flex-direction: row;
+    margin-right: 40px;
+    margin-left: 40px;
+    justify-content: space-between;
 }
-.products{
+.productos{
     background-color: rgba(0, 0, 255, 0.53);
     border-radius: 15px;
     margin-bottom: 15px;
+    width: 250px;
+    height: 300px;
+}
+.imagenProductos{
+    border-radius: 15px;
+    height: 160px;
+    width: 180px;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+.imagenDetalle{
+    border-radius: 15px;
+    height: 360px;
+    width: 380px;
+    margin: 30px;
 }
 .botonDetalles{
     background-color: black;
@@ -19,30 +33,54 @@
     border-radius: 8px;
     text-decoration: none;
     margin-top: 8px;
+    margin-left: 80px;
 }
 /*CSS Detalle del Producto*/
 .detalleProducto{
     background-color: rgba(0, 0, 255, 0.53);
     border-radius: 15px;
     display: flex;
+    width: 760px;
+    margin-left: 45px;
+}
+.tituloDetalle{
+    color: black;
+    margin-left: 35px;
+    font-size: 30px;
 }
 .textoProductos{
-    color: rgba(255, 255, 0, 0.707);
-    justify-content: center;
-    align-content: center;
+    color: black;
+    margin-left: 35px;
+    font-size: 20px;
 }
 .detalleProducto--cantidad{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    margin-left: 75px;
+}
+.cantidadDetalle{
+    margin-top: 0;
+    font-size: 20px;
 }
 .boton-mas{
     background-color: rgba(21, 222, 21, 0.841);
     border-radius: 5px;
     color: black;
+    width: 30px;
+    height: 30px;
 }
 .boton-menos{
     background-color: rgba(223, 19, 19, 0.919);
     border-radius: 5px;
     color: black;
+    width: 30px;
+    height: 30px;
+}
+.botonCarrito{
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 8px;
+    margin-left: 45px;
+    height: 45px;
 }

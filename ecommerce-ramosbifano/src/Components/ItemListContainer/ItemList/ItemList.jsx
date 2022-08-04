@@ -1,12 +1,12 @@
-function ItemList(productos){
+import Item from "../Item/Item";
+
+function ItemList({producto}){
     return(
         <div className="cart">
-            <div className="products">
-                <h2>{productos.nombre}</h2>
-                <img src={productos.imagen} alt="Imagen Producto" />
-                <button className="botonDetalles">Ver Detalles</button>
-            </div>
+            {producto?.map(productos=>
+            <Item key={productos.id} producto={productos}/>)}
         </div>
+        
     )
 }
 export default ItemList;

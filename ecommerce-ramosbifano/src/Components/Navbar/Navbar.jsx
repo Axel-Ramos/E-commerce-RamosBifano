@@ -9,8 +9,7 @@ function Navbar(){
   return(
     <header className="App-header">
       <nav className="navbar">
-          <Link to="/">KARFAB</Link>
-          {/* <p>KARFAB</p> */}
+          <Link to="/"><p>KARFAB</p></Link>
           <div>
             <ul className="navbar-media">
               <li className="logos"><LogoFacebook/></li>

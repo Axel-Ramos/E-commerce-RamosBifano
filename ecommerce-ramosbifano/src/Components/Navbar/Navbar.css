@@ -4,6 +4,9 @@ header{
 }
 header p{
     font-size: 25px;
+    text-decoration: none;
+    color: white;
+    
 }
 .navbar{
     display: flex;
@@ -25,7 +28,6 @@ header p{
 }
 .logos{
     margin-left: 15px;
-
 }
 .links{
     text-decoration: none;

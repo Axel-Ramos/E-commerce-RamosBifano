@@ -1,22 +1,34 @@
 import {useState} from "react";
 
-function Contador(){
-    const [contador, actualizarContador]=useState(1);
+function Contador({initial=1, stock=10, onAdd}){
+    const [contador, actualizarContador]=useState(initial);
     function sumarContador(){
-        actualizarContador(contador+1)
+        if(contador<stock){
+          actualizarContador(contador+1)  
+        }
     };
     function restarContador(){
-        if(contador<2){
-            contador=1
+        if(contador>initial){
+            actualizarContador(contador-1)
         }
-        actualizarContador(contador-1)
+        
     };
+    function agregarCarrito(){
+        if(contador<stock){
+            onAdd(contador)
+        }
+        
+    }
     return(
-        <div className="detalleProducto--cantidad">
+        <div>
+            <div className="detalleProducto--cantidad">
                 <button onClick={restarContador} className="boton-menos">-</button>
-                {contador}
+                <p className="cantidadDetalle">{contador}</p>
                 <button onClick={sumarContador} className="boton-mas">+</button>
             </div>
+            <button onClick={agregarCarrito} className="botonCarrito">Agregar al Carrito</button>
+        </div>
+
     )
 }
 export default Contador;

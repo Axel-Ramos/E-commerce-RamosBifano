@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getFetch } from "../../Helpers/productos";
-import Item from "./Item/Item";
+import ItemList from "./ItemList/ItemList";
+
 import "./ItemListContainer.css";
 
 function ItemListContainer(){
@@ -30,11 +31,10 @@ function ItemListContainer(){
     },[categoriaId])
     console.log(productos)
     return(
-        <div className="itemContainer">
-                {carga ? <h1>Cargando...</h1>
-                :
-                productos?.map(producto=>
-                <Item productos={producto}/>)}
+        <div>
+            {carga ? <h1>Cargando...</h1>
+            :
+            <ItemList producto={productos}/>}
         </div>
     )
 }
