@@ -1,0 +1,26 @@
+.cart{
+    text-decoration: none;
+}
+.productoCart{
+    background-color: rgb(0, 102, 255);
+    display: flex;
+}
+.imagenCart{
+    width: 55px;
+    height: 55px;
+}
+.detalleCart{
+    display: flex;
+}
+.textoCart{
+    margin-left: 10px;
+}
+.botonCart{
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 8px;
+    margin-left: 80px;
+    cursor: pointer;
+}
