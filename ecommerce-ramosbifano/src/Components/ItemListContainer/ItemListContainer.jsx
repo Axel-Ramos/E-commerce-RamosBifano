@@ -10,12 +10,6 @@ function ItemListContainer(){
     const [carga, setCarga]=useState(true)
     const {categoriaId}=useParams()
     useEffect(()=>{
-        //Codigo que no funciona de Fetch, el json lo pase a js para hacer el mock
-        // fetch("../../Helpers/productos.json")
-        // .then(respuesta=>respuesta.json())
-        // .then(respuesta=>setProductos(respuesta.results))
-        // .catch(err=>console.log(err))
-        // .finally(()=>setCarga(false))
         if (categoriaId) {
             getFetch()
             .then(respuesta=>setProductos(respuesta.filter(producto=>producto.categoria===categoriaId)))

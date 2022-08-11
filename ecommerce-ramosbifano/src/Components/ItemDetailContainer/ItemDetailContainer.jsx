@@ -6,6 +6,7 @@ import ItemDetail from "./ItemDetail/ItemDetail"
 
 const ItemDetailContainer=()=>{
     const [productos, setProductos]=useState([])
+    const [carga, setCarga]=useState(true)
     const {detalleId}=useParams();
     
     useEffect(()=>{
@@ -14,7 +15,9 @@ const ItemDetailContainer=()=>{
     },[])
     return(
         <div>
-            <ItemDetail producto={productos}/>
+            {carga ? <h1>Cargando...</h1>
+            :
+            <ItemDetail producto={productos}/>}
         </div>
 
     )

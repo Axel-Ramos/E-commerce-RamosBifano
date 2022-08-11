@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter> 
       <CartContextProvider>
         <div className="App">
           <Navbar/>

@@ -5,7 +5,8 @@
     flex-direction: row;
     margin-right: 40px;
     margin-left: 40px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    column-gap: 1cm;
 }
 .productos{
     background-color: rgba(0, 0, 255, 0.53);
