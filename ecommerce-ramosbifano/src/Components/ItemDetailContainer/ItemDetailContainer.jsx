@@ -12,7 +12,8 @@ const ItemDetailContainer=()=>{
     useEffect(()=>{
         getFetch(detalleId)
         .then(respuesta=>setProductos(respuesta))
-    },[])
+        .finally(()=>setCarga(false))
+    },[detalleId])
     return(
         <div>
             {carga ? <h1>Cargando...</h1>

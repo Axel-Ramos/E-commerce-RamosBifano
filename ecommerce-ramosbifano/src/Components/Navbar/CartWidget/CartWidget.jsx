@@ -1,9 +1,16 @@
 import { BsCart3 } from "react-icons/bs";
+import { useCartContext } from "../../../Context/CartContext";
 import "./CartWidget.css"
 
 function CartWidget() {
-    return( 
-        <h1 className="carro"><BsCart3/></h1>
+    const {cantidadTotal}=useCartContext()
+    console.log(cantidadTotal())
+    return(
+        <div className="carrito">
+            <h1 className="carro"><BsCart3/>{cantidadTotal}</h1>
+            {cantidadTotal()}
+        </div>
+        
     )
   
 }

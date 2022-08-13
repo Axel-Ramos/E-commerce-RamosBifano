@@ -22,13 +22,12 @@ const CartContextProvider = ({children}) => {
         setCartList([])
     }
     const precioTotal = ()=>{
-        return cartList.reduce( (acumularPrecio, productoObjeto) => acumularPrecio = acumularPrecio + (productoObjeto.price * productoObjeto.cantidad) , 0) // <- precioTotal
+        return cartList.reduce( (acumularPrecio, producto) => acumularPrecio = acumularPrecio + (producto.precio * producto.cantidad) , 0) // <- precioTotal
     }
     const cantidadTotal = ()=>{
-        return cartList.reduce((contador, productoObjeto) => contador += productoObjeto.cantidad , 0) 
+        return cartList.reduce((contador, producto) => contador += producto.cantidad , 0) 
     }
     const eliminarProducto = (id) => {
-        // setCartList(cartList.splice(pos, 1, ))
         setCartList( cartList.filter(producto => producto.id !== id ) )
     }
 
