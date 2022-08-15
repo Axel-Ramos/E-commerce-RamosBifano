@@ -5,14 +5,14 @@ import "./CartWidget.css"
 function CartWidget() {
     const {cantidadTotal}=useCartContext()
     console.log(cantidadTotal())
-    return(
+    if (cantidadTotal) {
+        return(
         <div className="carrito">
             <h1 className="carro"><BsCart3/>{cantidadTotal}</h1>
             {cantidadTotal()}
         </div>
-        
-    )
-  
+        )
+    } 
 }
 
 export default CartWidget;
