@@ -1,12 +1,10 @@
-import { useCartContext } from "../../Context/CartContext";
-import "./Cart.css";
+import {useCartContext} from "../../../Context/CartContext"
+import Formulario from "../Formulario/Formulario";
 
-const Cart = () => {
+const Carrito=()=>{
     const { cartList, vaciarCarrito,eliminarProducto,precioTotal } = useCartContext()
-
-    return (
-        <div>
-            <h1>Carrito</h1>
+    return(
+        <>
             <div>
                 <ul className="carrito">
                     <li className="textoCart cart">PRODUCTO</li>
@@ -34,8 +32,8 @@ const Cart = () => {
                 <h3>{ precioTotal() !== 0 && `Precio Total: ${ precioTotal() }`}</h3>
                 <button onClick={vaciarCarrito} className="botonEliminar">Vaciar carrito</button>
             </div>
-        </div>
+            <Formulario/>
+        </>
     )
-
 }
-export default Cart;
+export default Carrito;

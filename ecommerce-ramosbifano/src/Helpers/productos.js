@@ -45,7 +45,7 @@ let productos=[
         nombre:"Cortante Número",
         imagen:"/imagenes/cortante-numero.jpeg",
         precio:"250",
-        descripcion:"Cartante con los números del 0 al 9"
+        descripcion:"Cortante con los números del 0 al 9"
     },
     {
         id:"7",
@@ -53,7 +53,7 @@ let productos=[
         nombre:"Set Geometría",
         imagen:"/imagenes/set-geometria1.jpeg",
         precio:"320",
-        descripcion:"Set completo de geometría conteniendo regla de 20,escuadra y transportador"
+        descripcion:"Set completo de geometría conteniendo regla de 20cm, escuadra y transportador"
     }
 ]
 

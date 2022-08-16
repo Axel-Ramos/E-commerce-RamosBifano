@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { FirebaseConnections } from './Firebase/config';
 
 
-FirebaseConnections
+FirebaseConnections()
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
