@@ -5,6 +5,7 @@ const Carrito=()=>{
     const { cartList, vaciarCarrito,eliminarProducto,precioTotal } = useCartContext()
     return(
         <>
+            <h1>Carrito</h1>
             <div>
                 <ul className="carrito">
                     <li className="textoCart cart">PRODUCTO</li>

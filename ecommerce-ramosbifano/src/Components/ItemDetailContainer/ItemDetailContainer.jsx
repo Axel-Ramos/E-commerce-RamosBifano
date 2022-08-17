@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 import ItemDetail from "./ItemDetail/ItemDetail"
+import Spinner from "../Loading/Loading";
 
 
 const ItemDetailContainer=()=>{
@@ -19,7 +20,7 @@ const ItemDetailContainer=()=>{
     },[detalleId])
     return(
         <div>
-            {carga ? <h1>Cargando...</h1>
+            {carga ? <Spinner/>
             :
             <ItemDetail producto={producto}/>}
         </div>

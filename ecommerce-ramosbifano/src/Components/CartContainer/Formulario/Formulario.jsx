@@ -40,7 +40,7 @@ const Formulario=()=>{
                 rEmail:''
             })
         )
-        const queryCollectionStock = collection(db, 'items') 
+        const queryCollectionStock = collection(db, 'productos') 
         const queryActulizarStock = query(
             queryCollectionStock,  
             where( documentId() , 'in', cartList.map(producto => producto.id))         
@@ -86,6 +86,7 @@ const Formulario=()=>{
                 </div>
                 <button type="submit" className="botonEnviar">Enviar</button>
             </form>
+            {id.length > 0 && <h2>El id de la orden es:  {id}</h2> }
         </div>
     )
 }

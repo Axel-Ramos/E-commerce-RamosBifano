@@ -4,6 +4,7 @@ import {collection, getDocs, getFirestore, query, where} from "firebase/firestor
 import ItemList from "./ItemList/ItemList";
 
 import "./ItemListContainer.css";
+import Spinner from "../Loading/Loading";
 
 function ItemListContainer(){
     const [productos, setProductos]=useState([])
@@ -30,7 +31,7 @@ function ItemListContainer(){
     console.log(productos)
     return(
         <div>
-            {carga ? <h1>Cargando...</h1>
+            {carga ? <Spinner/>
             :
             <ItemList producto={productos}/>}
         </div>
