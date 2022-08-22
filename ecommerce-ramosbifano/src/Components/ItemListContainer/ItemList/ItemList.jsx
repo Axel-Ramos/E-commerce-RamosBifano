@@ -1,10 +1,10 @@
-import Item from "../Item/Item";
+import Item from "./Item/Item";
 
-function ItemList({producto}){
+function ItemList({productos}){
     return(
         <div className="cart">
-            {producto?.map(productos=>
-            <Item key={productos.id} producto={productos}/>)}
+            {productos?.map(producto=>
+            <Item key={producto.id} producto={producto}/>)}
         </div>
         
     )

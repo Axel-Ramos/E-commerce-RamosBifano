@@ -12,7 +12,7 @@ const ItemDetailContainer=()=>{
     
     useEffect(()=>{
         const db = getFirestore()
-        const queryProducto = doc(db, 'items', detalleId)
+        const queryProducto = doc(db, 'productos', detalleId)
         getDoc(queryProducto)
         .then(resp => setProducto( { id: resp.id, ...resp.data() } ) )
         .catch( err => console.log(err) )
@@ -20,9 +20,9 @@ const ItemDetailContainer=()=>{
     },[detalleId])
     return(
         <div>
-            {carga ? <Spinner/>
+            {carga ? <div className="contenedor"><Spinner/></div>
             :
-            <ItemDetail producto={producto}/>}
+            <ItemDetail productos={producto}/>}
         </div>
 
     )

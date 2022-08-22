@@ -1,7 +1,7 @@
 import {useCartContext} from "../../../Context/CartContext"
 import Formulario from "../Formulario/Formulario";
 
-const Carrito=()=>{
+const Cart=()=>{
     const { cartList, vaciarCarrito,eliminarProducto,precioTotal } = useCartContext()
     return(
         <>
@@ -37,4 +37,4 @@ const Carrito=()=>{
         </>
     )
 }
-export default Carrito;
+export default Cart;

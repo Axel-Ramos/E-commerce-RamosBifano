@@ -1,3 +1,17 @@
+/*Carrito Vacio*/
+.vacio{
+    background-color: rgb(106, 106, 109);
+    margin-top: -22px;
+    height: 100vh;
+}
+.carritoVacio{
+    margin-left: 650px;
+}
+.texto{
+    font-size: 30px;
+    text-align: center;
+}
+/* Carrito Lleno */
 .cart{
     text-decoration: none;
 }

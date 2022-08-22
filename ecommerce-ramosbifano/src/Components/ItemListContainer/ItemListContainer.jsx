@@ -31,7 +31,7 @@ function ItemListContainer(){
     console.log(productos)
     return(
         <div>
-            {carga ? <Spinner/>
+            {carga ? <div className="contenedor"><Spinner/></div>
             :
             <ItemList producto={productos}/>}
         </div>
