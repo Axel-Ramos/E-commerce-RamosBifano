@@ -9,7 +9,7 @@ function Navbar(){
   return(
     <header className="App-header">
       <nav className="navbar">
-          <Link to="/"><p>KARFAB</p></Link>
+          <Link to="/" className="links"><p>KARFAB</p></Link>
           <div>
             <ul className="navbar-media">
               <li className="logos"><LogoFacebook/></li>
@@ -21,11 +21,11 @@ function Navbar(){
       <nav>
         <div>
           <ul className="navbar-productos">
-            <Link to="/categoria/cucharas"><li className="navbar-listap links">Cucharas</li></Link>
-            <Link to="/categoria/mascara-facial"><li className="navbar-listap links">Máscara Facial</li></Link>
-            <Link to="/categoria/cortantes"><li className="navbar-listap links">Cortantes</li></Link>
-            <Link to="/categoria/set-geometria"><li className="navbar-listap links">Set Geometría</li></Link>
-            <Link to="/cart"><CartWidget/></Link>
+            <Link to="/categoria/cucharas" className="links"><li className="navbar-listap">Cucharas</li></Link>
+            <Link to="/categoria/mascara-facial" className="links"><li className="navbar-listap links">Máscara Facial</li></Link>
+            <Link to="/categoria/cortantes" className="links"><li className="navbar-listap links">Cortantes</li></Link>
+            <Link to="/categoria/set-geometria" className="links"><li className="navbar-listap links">Set Geometría</li></Link>
+            <Link to="/cart" className="links"><CartWidget/></Link>
           </ul>
         </div>
       </nav>

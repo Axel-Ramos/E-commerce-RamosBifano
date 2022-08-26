@@ -8,8 +8,8 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter> 
-      <CartContextProvider>
+    <CartContextProvider>
+      <BrowserRouter> 
         <div className="App">
           <Navbar/>
           <Routes>
@@ -20,9 +20,8 @@ function App() {
             <Route path="*" element={<Navigate to="/"/>}/>
           </Routes>
         </div>
-      </CartContextProvider>
-      
-    </BrowserRouter>
+      </BrowserRouter>
+    </CartContextProvider>
   );
 }
 

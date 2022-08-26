@@ -11,13 +11,11 @@ function Contador({initial=1, stock=10, onAdd}){
         if(contador>initial){
             actualizarContador(contador-1)
         }
-        
     };
     function agregarCarrito(){
         if(contador<stock){
             onAdd(contador)
         }
-        
     }
     return(
         <div>
@@ -28,7 +26,6 @@ function Contador({initial=1, stock=10, onAdd}){
             </div>
             <button onClick={agregarCarrito} className="botonCarrito">Agregar al Carrito</button>
         </div>
-
     )
 }
 export default Contador;

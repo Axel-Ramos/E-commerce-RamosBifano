@@ -11,6 +11,15 @@
     font-size: 30px;
     text-align: center;
 }
+.botonProductos{
+    border:rgb(106, 106, 109) 3px solid;
+    border-radius: 5px;
+    color: black;
+    width: 90px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 625px;
+}
 /* Carrito Lleno */
 .cart{
     text-decoration: none;
