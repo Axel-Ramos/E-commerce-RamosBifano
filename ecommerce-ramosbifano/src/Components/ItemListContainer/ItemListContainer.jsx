@@ -14,20 +14,20 @@ function ItemListContainer(){
         if (categoriaId) {
             const db = getFirestore()
             const queryCollection=collection(db, "poductos")
-            const queryFiltrada= query(queryCollection, where("categoria","==", categoriaId))
+            const queryFiltrada= categoriaId? query(queryCollection, where("categoria","==", categoriaId)): queryCollection
             getDocs(queryFiltrada)
-            .then(respuesta=>setProductos(respuesta.docs.map(productos=>({id:productos.id, ...productos.data()}))))
+            .then(respuesta=>setProductos(respuesta.docs.map(producto=>({id:producto.id, ...producto.data()}))))
             .catch(err=>console.log(err))
             .finally(()=>setCarga(false))
         } else {
             const db = getFirestore()
             const queryCollection=collection(db, "poductos")
             getDocs(queryCollection)
-            .then(respuesta=>setProductos(respuesta.docs.map(productos=>({id:productos.id, ...productos.data()}))))
+            .then(respuesta=>setProductos(respuesta.docs.map(producto=>({id:producto.id, ...producto.data()}))))
             .catch(err=>console.log(err))
             .finally(()=>setCarga(false))
         }
-
+        
     },[categoriaId])
     return(
         <div>
