@@ -9,7 +9,7 @@ const ItemDetailContainer=()=>{
     const [producto, setProducto]=useState({})
     const [carga, setCarga]=useState(true)
     const {detalleId}=useParams();
-    
+    //Traer solo el producto seleccionado 
     useEffect(()=>{
         const db = getFirestore()
         const queryProducto = doc(db, 'productos', detalleId)

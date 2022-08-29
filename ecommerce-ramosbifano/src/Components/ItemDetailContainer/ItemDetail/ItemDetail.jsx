@@ -4,10 +4,9 @@ import { useCartContext } from "../../../Context/CartContext";
 import Contador from "../../ItemListContainer/ItemCount/ItemCount";
 
 const DetalleProducto=({productos})=>{
-    
     const [isCount, setIsCount]=useState(true)
     const { agregarCarrito } = useCartContext()
-
+    
     const onAdd=(cantidad)=>{
         agregarCarrito( { ...productos, cantidad: cantidad } )
         setIsCount(false)

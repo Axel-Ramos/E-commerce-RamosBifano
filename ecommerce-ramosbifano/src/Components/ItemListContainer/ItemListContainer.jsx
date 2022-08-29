@@ -9,25 +9,15 @@ function ItemListContainer(){
     const [productos, setProductos]=useState([])
     const [carga, setCarga]=useState(true)
     const {categoriaId}=useParams()
-
+    //traer los productos de la base de datos
     useEffect(()=>{
-        if (categoriaId) {
-            const db = getFirestore()
-            const queryCollection=collection(db, "poductos")
-            const queryFiltrada= categoriaId? query(queryCollection, where("categoria","==", categoriaId)): queryCollection
-            getDocs(queryFiltrada)
-            .then(respuesta=>setProductos(respuesta.docs.map(producto=>({id:producto.id, ...producto.data()}))))
-            .catch(err=>console.log(err))
-            .finally(()=>setCarga(false))
-        } else {
-            const db = getFirestore()
-            const queryCollection=collection(db, "poductos")
-            getDocs(queryCollection)
-            .then(respuesta=>setProductos(respuesta.docs.map(producto=>({id:producto.id, ...producto.data()}))))
-            .catch(err=>console.log(err))
-            .finally(()=>setCarga(false))
-        }
-        
+        const db = getFirestore()
+        const queryCollection=collection(db, "poductos")
+        const queryFiltrada= categoriaId? query(queryCollection, where("categoria","==", categoriaId)): queryCollection
+        getDocs(queryFiltrada)
+        .then(respuesta=>setProductos(respuesta.docs.map(producto=>({id:producto.id, ...producto.data()}))))
+        .catch(err=>console.log(err))
+        .finally(()=>setCarga(false))
     },[categoriaId])
     return(
         <div>

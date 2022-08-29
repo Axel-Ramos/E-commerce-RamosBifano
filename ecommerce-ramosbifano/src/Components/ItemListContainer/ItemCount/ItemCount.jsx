@@ -2,16 +2,19 @@ import {useState} from "react";
 
 function Contador({initial=1, stock=10, onAdd}){
     const [contador, actualizarContador]=useState(initial);
+    //Funcion para sumar cantidad
     function sumarContador(){
         if(contador<stock){
           actualizarContador(contador+1)  
         }
     };
+    //Funcion para restar cantidad
     function restarContador(){
         if(contador>initial){
             actualizarContador(contador-1)
         }
     };
+    //Funcion para agregar al carrito
     function agregarCarrito(){
         if(contador<stock){
             onAdd(contador)
