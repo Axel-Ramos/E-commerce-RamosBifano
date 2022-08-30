@@ -12,7 +12,7 @@ function ItemListContainer(){
     //traer los productos de la base de datos
     useEffect(()=>{
         const db = getFirestore()
-        const queryCollection=collection(db, "poductos")
+        const queryCollection=collection(db, "productos")
         const queryFiltrada= categoriaId? query(queryCollection, where("categoria","==", categoriaId)): queryCollection
         getDocs(queryFiltrada)
         .then(respuesta=>setProductos(respuesta.docs.map(producto=>({id:producto.id, ...producto.data()}))))

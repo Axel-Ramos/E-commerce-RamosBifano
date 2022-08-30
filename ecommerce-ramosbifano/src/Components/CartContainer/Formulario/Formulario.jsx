@@ -12,7 +12,6 @@ const Formulario=()=>{
         email:'', 
         rEmail:''
     })
-    //Funcion para crear y guardar la orden de compra
     const guardarOrden = async (e) => {
         e.preventDefault()
         
@@ -28,7 +27,7 @@ const Formulario=()=>{
         })
         
         orden.total = precioTotal()
-        //Crear la orden en Firebase
+
         const db = getFirestore()
         const queryOrders = collection(db, 'ordenes')
         addDoc(queryOrders, orden)
@@ -58,7 +57,6 @@ const Formulario=()=>{
         batch.commit()
 
     }
-    //Funcion para registrar lo que se escribe en el form
     const handleChange = (e) => {
         
         setFormData({
@@ -69,18 +67,18 @@ const Formulario=()=>{
     return(
         <div className="form">
             <form onSubmit={ guardarOrden } className="formulario" >
-                <label className="titulo">Datos Presonales</label>
+                <label className="titulo">Datos Personales</label>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Nombre</label>
                     <input type="text" className="form-control" name="name" placeholder="Ingrese el nombre" onChange={handleChange} value={formData.name}/>                        
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Teléfono</label>
-                    <input type="text" className="form-control" name="phone" placeholder="Ingrese el teléfono"onChange={handleChange}  value={formData.phone}/>                        
+                    <input type="text" className="form-control" name="phone" onChange={handleChange} placeholder="Ingrese el teléfono" value={formData.phone}/>                        
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email</label>
-                    <input type="email" className="form-control" name="email" placeholder="Enter email"onChange={handleChange}  value={formData.email}/>   
+                    <input type="email" className="form-control" name="email" onChange={handleChange} placeholder="Enter email" value={formData.email}/>   
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword1">Repetir Email</label>
@@ -88,7 +86,7 @@ const Formulario=()=>{
                 </div>
                 <button type="submit" className="botonEnviar">Enviar</button>
             </form>
-            {id.length > 0 && <h2>El id de la orden es: {id}</h2> }
+            {id.length > 0 && <h2>El id de la orden es:  {id}</h2> }
         </div>
     )
 }
