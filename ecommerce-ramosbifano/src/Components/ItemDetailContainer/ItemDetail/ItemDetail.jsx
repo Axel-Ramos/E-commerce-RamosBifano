@@ -16,7 +16,7 @@ const DetalleProducto=({productos})=>{
             <img src={productos.imagen} alt="Imagen del Producto" className="imagenDetalle"/>
             <div>
                 <h1 className="tituloDetalle">{productos.nombre}</h1>
-                <p className="textoProductos">Descripcción: {productos.descripcion}</p>
+                <p className="textoProductos">{productos.descripcion}</p>
                 <p className="textoProductos">Precio: ${productos.precio}</p>
                 <div>
                     { isCount  ?  

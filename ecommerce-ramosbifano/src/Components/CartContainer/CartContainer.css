@@ -32,8 +32,8 @@
     font-size: 15px;
 }
 .imagenCart{
-    width: 115px;
-    height: 115px;
+    width: 110px;
+    height: 110px;
     margin-bottom: 25px;
 }
 .detalleCart{
@@ -46,10 +46,11 @@
 }
 .textoCarrito{ 
     text-decoration: none;
-    margin-left: 10px;
+    margin-left: 50px;
 }
 .textoCart{ 
-    margin-left: 50px;
+    margin-left: 60px;
+    text-align: center;
 }
 .botonCart{
     background-color: black;

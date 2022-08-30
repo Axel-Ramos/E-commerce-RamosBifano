@@ -65,7 +65,7 @@ const Formulario=()=>{
         })
     }
     return(
-        <div className="form">
+        <div>
             <form onSubmit={ guardarOrden } className="formulario" >
                 <label className="titulo">Datos Personales</label>
                 <div className="form-group">
