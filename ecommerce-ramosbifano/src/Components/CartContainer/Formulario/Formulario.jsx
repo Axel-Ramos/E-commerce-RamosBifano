@@ -1,62 +1,15 @@
 import { useState } from "react"
-import { addDoc, collection, documentId, getDocs, getFirestore, query, where, writeBatch } from "firebase/firestore"
-import {useCartContext} from "../../../Context/CartContext"
 import "./Formulario.css"
 
-const Formulario=()=>{
-    const {cartList, precioTotal, vaciarCarrito} = useCartContext()
-    const [ id, setId ] = useState('')
+const Formulario=({guardarOrden})=>{
     const [formData, setFormData] = useState({
         nombre:'', 
         telefono:'',
         email:'', 
         rEmail:''
     })
-    const guardarOrden = async (e) => {
-        e.preventDefault()
-        
-        const orden = {}
-        orden.comprador = formData
-
-        orden.producto = cartList.map(producto => {
-            return {
-                producto: producto.nombre,
-                id: producto.id,
-                precio: producto.precio
-            }
-        })
-        
-        orden.total = precioTotal()
-
-        const db = getFirestore()
-        const queryOrders = collection(db, 'ordenes')
-        addDoc(queryOrders, orden)
-        .then(resp => setId(resp.id))
-        .catch(err => console.log(err))
-        .finally(()=> setFormData({
-                email:'', 
-                name:'', 
-                phone:'',
-                rEmail:''
-            })
-        )
-        const queryCollectionStock = collection(db, 'productos') 
-        const queryActulizarStock = query(
-            queryCollectionStock,  
-            where( documentId() , 'in', cartList.map(producto => producto.id))         
-        )
-        const batch = writeBatch(db)
-
-        await getDocs(queryActulizarStock)
-        .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-            stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad
-        })))
-        .catch(err => console.log(err))
-        .finally(()=> {vaciarCarrito()})
-
-        batch.commit()
-
-    }
+    
+    //Revisa lo que se introduce en el Form
     const handleChange = (e) => {
         
         setFormData({
@@ -64,9 +17,22 @@ const Formulario=()=>{
             [e.target.name]: e.target.value
         })
     }
+    //Verificación email Form
+    const handleSubmit = (e) => {
+
+        if (formData.email !== formData.rEmail){
+            alert('Se detecto un ERROR. Ingrese nuevamente su email')
+        }
+        else {
+            delete formData.rEmail
+            guardarOrden (e,formData)
+
+        }
+        e.preventDefault ()
+    }
     return(
         <div>
-            <form onSubmit={ guardarOrden } className="formulario" >
+            <form onSubmit={e => {handleSubmit(e)}} className="formulario" >
                 <label className="titulo">Datos Personales</label>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Nombre</label>
@@ -86,7 +52,6 @@ const Formulario=()=>{
                 </div>
                 <button type="submit" className="botonEnviar">Enviar</button>
             </form>
-            {id.length > 0 && <h2>El id de la orden es:  {id}</h2> }
         </div>
     )
 }
