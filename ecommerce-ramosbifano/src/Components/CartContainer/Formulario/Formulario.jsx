@@ -36,11 +36,11 @@ const Formulario=({guardarOrden})=>{
                 <label className="titulo">Datos Personales</label>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Nombre</label>
-                    <input type="text" className="form-control" name="name" placeholder="Ingrese el nombre" onChange={handleChange} value={formData.name}/>                        
+                    <input type="text" className="form-control" name="nombre" placeholder="Ingrese el nombre" onChange={handleChange} value={formData.nombre}/>                        
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Teléfono</label>
-                    <input type="text" className="form-control" name="phone" onChange={handleChange} placeholder="Ingrese el teléfono" value={formData.phone}/>                        
+                    <input type="text" className="form-control" name="telefono" onChange={handleChange} placeholder="Ingrese el teléfono" value={formData.telefono}/>                        
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email</label>
